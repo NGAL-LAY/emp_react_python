@@ -6,7 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import './styles/global.css';
 
-ReactDOM.render(
+// Get the root element from your HTML
+const rootElement = document.getElementById("root");
+
+// Create a root and render your app
+const root = ReactDOM.createRoot(rootElement);
+root.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
