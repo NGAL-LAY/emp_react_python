@@ -1,18 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
-function Home() {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    navigate('/');
-  };
-
-  return (
-    <div>
-      <h1>Welcome to Home</h1>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
-  );
-}
+const Home = () => (
+  <div>
+    <h2>Welcome to the Home Page</h2>
+    <p>This is a simple React app with JWT authentication.</p>
+  </div>
+);
 
 export default Home;

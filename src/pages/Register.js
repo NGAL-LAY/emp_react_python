@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 
-const Login = ({ onLogin }) => {
+const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin(username, password);
+    alert(`Registered with username: ${username}`);
+    setUsername('');
+    setPassword('');
   };
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Username:</label>
@@ -31,10 +33,10 @@ const Login = ({ onLogin }) => {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;
