@@ -1,20 +1,5 @@
-// import './App.css';
-// import { Routes, Route } from 'react-router-dom';
-// import Login from './pages/Login';
-// import Home from './pages/Home';
-
-// function App() {
-//   return (
-//     <Routes>
-//       <Route path='/' element={<Login />}/>
-//       <Route path='/Home' element={<Home />}/>
-//     </Routes>
-//   );
-// }
-
-// export default App;
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
+import { Route, Routes, Navigate, Link } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
@@ -52,7 +37,7 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <>
       <nav>
         <Link to="/">Home</Link> |{' '}
         {isAuthenticated ? (
@@ -67,6 +52,7 @@ const App = () => {
       </nav>
 
       <Routes>
+      
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/register" element={<Register />} />
@@ -77,7 +63,7 @@ const App = () => {
           }
         />
       </Routes>
-    </Router>
+    </>
   );
 };
 
