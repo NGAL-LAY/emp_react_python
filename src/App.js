@@ -21,8 +21,11 @@ const App = () => {
     <nav>
       {isAuthenticated ? (
         <>
+          <Link>Logo</Link> |{' '}
           <Link to="/">Home</Link> |{' '}
-          <Link to="/positions">Positions</Link> |{' '}
+          <Link to="/employees">Employees</Link> |{' '}
+          <Link to="/departments">Departments</Link> |{' '}
+          <Link to="/employees">Reports</Link> |{' '}
           <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
