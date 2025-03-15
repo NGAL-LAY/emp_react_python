@@ -18,7 +18,6 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <BrowserRouter>
     <App />
-  </BrowserRouter>,
-  document.getElementById('root')
+  </BrowserRouter>
 );
 reportWebVitals();
