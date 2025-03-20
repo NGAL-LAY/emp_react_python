@@ -1,0 +1,4 @@
+.birthday_table_wrapper{
+    max-height: 125px;
+    overflow-y: auto;
+}

@@ -8,9 +8,7 @@ import AuthService from './services/authService';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(AuthService.isAuthenticated());
-
   const handleLogin = () => setIsAuthenticated(AuthService.isAuthenticated());
-
   const handleLogout = () => {
     AuthService.logout();
     setIsAuthenticated(false);
@@ -54,6 +52,21 @@ const App = () => {
         </>
       )}
     </Routes>
+
+    <footer className="bg-light bg-opacity-75 text-center">
+    <div className="container">
+    <p className='text-warning-emphasis'>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+    <p>
+      <a href="/privacy" className="text-warning-emphasis me-3">
+        Privacy Policy |
+      </a>
+      
+      <a href="/terms" className="text-warning-emphasis ms-3">
+        Terms of Service
+      </a>
+    </p>
+  </div>
+    </footer>
   </>
   );
 };
