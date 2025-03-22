@@ -6,7 +6,6 @@ import DepartmentImage from '../assets/images/Department.jpg';
 import "../styles/home.css";
 
 const Home = () => {
-  const userName = "John Doe";
   const userSats = {
     totalEmp: 120,
     todayLev: 5,
@@ -24,14 +23,9 @@ const Home = () => {
     { name: 'Emma Brown', date: '2025-03-30' },
   ];
   return (
-    <div className='body_div_height'>
-      {/* user */}
-      <div className='text-center text-light'>
-        <h3>Welcome, {userName}!</h3>
-      </div>
-      
+    <div className='body_div_height body_div_width'>
       {/* employee info */}
-      <div className='row'>
+      <div className='row mt-4'>
         <div className='col-2 offset-1'>
           <div className="p-2 border rounded text-center bg-light bg-opacity-75 text-warning-emphasis">Total Employees : {userSats.totalEmp}</div>
         </div>
@@ -44,7 +38,7 @@ const Home = () => {
       </div>
 
       {/* quick action part */}
-      <div className='container-fluid'>
+      <div className='container-fluid mt-4'>
       <div className='row'>
           <div className="col-2 ms-5 card">
           <a href="https://example.com" className="card-link text-decoration-none">
@@ -104,24 +98,26 @@ const Home = () => {
       </div>
 
       {/* announce and birthdays */}
-      <div className='row container-fluid'>
-        <div className='col-5 offset-1 bg-light bg-opacity-75 border rounded p-2'>
+      <div className='row container-fluid mt-4'>
+        <div className='col-4 offset-1 bg-light bg-opacity-75 border rounded p-2'>
           <h4 className='text-warning-emphasis ms-3'>Announcements</h4>
-            {announcements.map((announce,index)=>(
-              <label className='form-control bg-light-subtle border-2 text-primary' key={index}>{announce}</label>
-            ))}
+          <div className='birthday_table_wrapper'>
+            <table className='table'>
+              <tbody>
+                {announcements.map((announce, index)=>(
+                  <tr key={index} className='bg-light-subtle text-primary'>
+                    <td>{announce}</td>
+                  </tr>
+                ))
+                }
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div className='col-5 offset-1 bg-light bg-opacity-75 border rounded pt-2'>
+        <div className='col-4 offset-2 bg-light bg-opacity-75 border rounded pt-2'>
           <h4 className='text-warning-emphasis ms-3'>Birthdays</h4>
           <div className='birthday_table_wrapper'>
             <table className='table table-striped'>
-              <thead className='bg-dark-subtle border-2'>
-                <tr>
-                <th className='text-center border-2'>Emp No</th>
-                <th className='ps-5 border-2'>Name</th>
-                <th className='text-center border-2'>Date</th>
-                </tr>
-              </thead>
               <tbody>
                 {birthdays.map((birthday, index)=>(
                   <tr key={index} className='bg-light-subtle text-primary'>

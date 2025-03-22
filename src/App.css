@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 } */
+.footer_height{
+  height: 50px;
+}
+footer p{
+  height: 7px;
+}
+.nav_width{
+  width: 600px;
+}
+.link_width{
+  width: 1000px;
+}
+.btn_width{
+  width: 300px;
+}

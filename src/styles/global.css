@@ -9,6 +9,39 @@ body {
   }
 
   .body_div_height{
-    height: 87vh;
+    height: 76.4vh;
   }
-  
+
+  .body_div_width{
+    width: 99%;
+  }
+
+  .table_wrapper{
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .register-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .register-box {
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(8px); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 50%;
+  }
+
+  .register-btn-one{
+    margin-left: 39%;
+    width: 150px;
+  }
+
+  .register-btn-two{
+    margin-left: 25%;
+    width: 150px;
+  }
