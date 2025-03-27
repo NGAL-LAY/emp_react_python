@@ -17,15 +17,15 @@ const Employees = () => {
                             New Employee
                         </Link>
                         </div>
-                        <div className="col-auto offset-6">
+                        <div className="col-3 offset-5 me-2">
                             <input
-                                className="form-control form-control-sm"
+                                className="form-control form-control-sm "
                                 type="search"
                                 placeholder="Enter"
                             />
                         </div>
                         <div className="col-auto">
-                            <button className="btn btn-outline-primary btn-sm" type="button">
+                            <button className="btn btn-outline-primary btn-sm btn-width me-3" type="button">
                                 Search
                             </button>
                         </div>
@@ -71,9 +71,10 @@ const Employees = () => {
                             </tbody>
                         </table>
                     </div>
+                    {/* update & delete */}
                     <div className="row pb-3">
-                        <button className="col-auto offset-10 btn btn-outline-primary btn-sm me-4">Update</button>
-                        <button className="col-auto btn btn-outline-danger btn-sm">
+                        <button className="col-auto offset-9 btn btn-outline-primary btn-sm me-5 btn-width">Update</button>
+                        <button className="col-auto btn btn-outline-danger btn-sm ms-4 btn-width">
                             Delete
                         </button>
                     </div>

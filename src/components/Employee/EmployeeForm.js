@@ -6,7 +6,7 @@ const EmployeeForm = (onSave, onCancel) => {
         code: "",
         name: "",
         email: "",
-        gender: "",
+        gender: "Male",
         birthday: "",
         address: "",
         basicSalary: "",
@@ -17,153 +17,212 @@ const EmployeeForm = (onSave, onCancel) => {
         dor: "",
     });
 
+    const departments = ["HR", "Finance", "Engineering", "Marketing", "Sales"];
+    const positions = ["HR", "Finance", "Engineering", "Marketing", "Sales"];
+
     const handleSubmit = (e) => {
         e.preventDefault();
         onSave(employee);
+    };
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setEmployee((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
     };
     return (
         <div className="register-container">
             <div className="register-box">
                 <form onSubmit={handleSubmit}>
-                    <h3 className="mb-1">Employee</h3>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Emp Code:</label>
-                        <input className="col-7 form-control-sm"
+                    <h3 className="mb-3 text-warning-emphasis">Employee</h3>
+                    {/* code */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="code">Emp Code:</label>
+                        <input className="col-6 form-control-sm"
+                            id="code"
                             type="text"
                             placeholder="Emp Number"
                             value={employee.code}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Name:</label>
+                    {/* name */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="name">Name:</label>
                         <input
-                            className="col-7 form-control-sm"
+                            id="name"
+                            className="col-6 form-control-sm"
                             type="text"
                             placeholder="Name"
                             value={employee.name}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Email:</label>
+                    {/* email */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="email">Email:</label>
                         <input
-                            className="col-7 form-control-sm"
+                            id="email"
+                            className="col-6 form-control-sm"
                             type="email"
                             placeholder="Email"
                             value={employee.email}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Gender:</label>
-                        <input
-                            className="col-7 form-control-sm"
-                            type="email"
-                            placeholder="Email"
-                            value={employee.email}
-                            onChange={(e) => setEmployee(e.target.value)}
-                            required
-                        />
+                    {/* gender */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="gender">Gender:</label>
+                        <div className="col-6 d-flex align-items-center" id="gender">
+                            <div className="form-check me-3">
+                                <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="gender"
+                                    value="Male"
+                                    checked={employee.gender === "Male"}
+                                    onChange={handleChange}
+                                    id="male"
+                                />
+                                <label className="form-check-label ms-1 text-warning-emphasis" htmlFor="male">
+                                    Male
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="gender"
+                                    value="Female"
+                                    checked={employee.gender === "Female"}
+                                    onChange={handleChange}
+                                    id="female"
+                                />
+                                <label className="form-check-label ms-1 text-warning-emphasis" htmlFor="female">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Birthday:</label>
+                    {/* birthday */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="birthday">Birthday:</label>
                         <input
-                            className="col-7 form-control-sm"
-                            type="number"
-                            placeholder="Email"
+                            id="birthday"
+                            className="col-6 form-control-sm"
+                            type="date"
                             value={employee.birthday}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Address:</label>
+                    {/* address */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="address">Address:</label>
                         <input
-                            className="col-7 form-control-sm"
-                            type="text"
+                            id="address"
+                            name="address"
+                            className="col-6 form-control-sm"
                             placeholder="Address"
                             value={employee.address}
-                            onChange={(e) => setEmployee(e.target.value)}
-                            required
+                            onChange={handleChange}
+                            rows="5"
                         />
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Basic Salary:</label>
+                    {/* basic salaary */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="basicsalary">Basic Salary:</label>
                         <input
-                            className="col-7 form-control-sm"
+                            id="basicsalary"
+                            className="col-6 form-control-sm"
                             type="number"
-                            placeholder="Salary"
+                            placeholder="basic salary"
                             value={employee.basicSalary}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Phone:</label>
+                    {/* phone */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="phone">Phone:</label>
                         <input
-                            className="col-7 form-control-sm"
+                            id="phone"
+                            className="col-6 form-control-sm"
                             type="number"
-                            placeholder="Phone"
+                            placeholder="Enter PhoneNo:(number only)"
                             value={employee.phone}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Department:</label>
-                        <input
-                            className="col-7 form-control-sm"
-                            type="number"
-                            placeholder="Phone"
+                    {/* department */}
+                    <div className="input-group row mb-2">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="department">Department:</label>
+                        <select id="department"
+                            className="col-6 form-control-sm"
                             value={employee.department}
-                            onChange={(e) => setEmployee(e.target.value)}
-                            required
-                        />
+                            onChange={(e) => setEmployee( e.target.value )}
+                            required>
+                            <option value='' disabled>--Select Department--</option>
+                            {departments.map((department, index) => (
+                                <option key={index} value={department}>{department}</option>
+                            ))
+                            }
+                        </select>
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Position:</label>
-                        <input
-                            className="col-7 form-control-sm"
-                            type="number"
-                            placeholder="Phone"
+                    {/* position */}
+                    <div className="input-group row mb-2">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="position">Position:</label>
+                        <select
+                            id="position"
+                            className="col-6 form-control-sm"
                             value={employee.position}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
-                        />
+                        >
+                            <option value='' disabled>--Select Position--</option>
+                            {positions.map((position, index) => (
+                                <option key={index} value={position}>{position}</option>
+                            ))}
+                        </select>
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Enter Date:</label>
+                    {/* enterdate */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="enterdate">Company EntDate:</label>
                         <input
-                            className="col-7 form-control-sm"
-                            type="number"
-                            placeholder="Phone"
+                            id="enterdate"
+                            className="col-6 form-control-sm"
+                            type="date"
                             value={employee.doe}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="input-group row mb-0">
-                        <label className="col-4 offset-1">Return Date:</label>
+                    {/* company leave date */}
+                    <div className="input-group row mb-1">
+                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="leavedate">Company LeaDate:</label>
                         <input
-                            className="col-7 form-control-sm"
-                            type="number"
-                            placeholder="Phone"
+                            id="leavedate"
+                            className="col-6 form-control-sm"
+                            type="date"
                             value={employee.dor}
-                            onChange={(e) => setEmployee(e.target.value)}
+                            onChange={handleChange}
                             required
                         />
                     </div>
-                    <div className="d-flex">
-                    <button type="submit"  className="register-btn-one btn btn-sm btn-outline-primary">
-                        Save
-                    </button>
-                    <Link to="/employees"  className="register-btn-two btn btn-sm btn-outline-primary me-3">
-                        Cancel
-                    </Link>
+                    {/* save & cancel */}
+                    <div className="d-flex mb-2">
+                        <button type="submit" className="register-btn-one btn btn-sm btn-outline-primary">
+                            Save
+                        </button>
+                        <Link to="/employees" className="register-btn-two btn btn-sm btn-outline-light">
+                            Cancel
+                        </Link>
                     </div>
                 </form>
             </div>
