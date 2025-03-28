@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const EmployeeForm = (onSave, onCancel) => {
+const EmployeeForm = ({ onSave }) => {
     const [employee, setEmployee] = useState({
         code: "",
         name: "",
@@ -26,7 +26,7 @@ const EmployeeForm = (onSave, onCancel) => {
     };
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setEmployee((prevState) => ({
             ...prevState,
             [name]: value,
@@ -43,8 +43,9 @@ const EmployeeForm = (onSave, onCancel) => {
                         <input className="col-6 form-control-sm"
                             id="code"
                             type="text"
+                            name="code"
                             placeholder="Emp Number"
-                            value={employee.code}
+                            value={employee.code || ""}
                             onChange={handleChange}
                             required
                         />
@@ -56,8 +57,9 @@ const EmployeeForm = (onSave, onCancel) => {
                             id="name"
                             className="col-6 form-control-sm"
                             type="text"
+                            name="name"
                             placeholder="Name"
-                            value={employee.name}
+                            value={employee.name || ""}
                             onChange={handleChange}
                             required
                         />
@@ -67,10 +69,11 @@ const EmployeeForm = (onSave, onCancel) => {
                         <label className="col-4 offset-1 text-warning-emphasis" htmlFor="email">Email:</label>
                         <input
                             id="email"
+                            name="email"
                             className="col-6 form-control-sm"
                             type="email"
                             placeholder="Email"
-                            value={employee.email}
+                            value={employee.email || ""}
                             onChange={handleChange}
                             required
                         />
@@ -114,9 +117,10 @@ const EmployeeForm = (onSave, onCancel) => {
                         <label className="col-4 offset-1 text-warning-emphasis" htmlFor="birthday">Birthday:</label>
                         <input
                             id="birthday"
+                            name="birthday"
                             className="col-6 form-control-sm"
                             type="date"
-                            value={employee.birthday}
+                            value={employee.birthday || ""}
                             onChange={handleChange}
                             required
                         />
@@ -129,7 +133,7 @@ const EmployeeForm = (onSave, onCancel) => {
                             name="address"
                             className="col-6 form-control-sm"
                             placeholder="Address"
-                            value={employee.address}
+                            value={employee.address || ""}
                             onChange={handleChange}
                             rows="5"
                         />
@@ -139,10 +143,11 @@ const EmployeeForm = (onSave, onCancel) => {
                         <label className="col-4 offset-1 text-warning-emphasis" htmlFor="basicsalary">Basic Salary:</label>
                         <input
                             id="basicsalary"
+                            name="basicsalary"
                             className="col-6 form-control-sm"
                             type="number"
                             placeholder="basic salary"
-                            value={employee.basicSalary}
+                            value={employee.basicSalary || ""}
                             onChange={handleChange}
                             required
                         />
@@ -152,10 +157,11 @@ const EmployeeForm = (onSave, onCancel) => {
                         <label className="col-4 offset-1 text-warning-emphasis" htmlFor="phone">Phone:</label>
                         <input
                             id="phone"
+                            name="phone"
                             className="col-6 form-control-sm"
                             type="number"
                             placeholder="Enter PhoneNo:(number only)"
-                            value={employee.phone}
+                            value={employee.phone || ""}
                             onChange={handleChange}
                             required
                         />
@@ -164,9 +170,10 @@ const EmployeeForm = (onSave, onCancel) => {
                     <div className="input-group row mb-2">
                         <label className="col-4 offset-1 text-warning-emphasis" htmlFor="department">Department:</label>
                         <select id="department"
+                            name="department"
                             className="col-6 form-control-sm"
-                            value={employee.department}
-                            onChange={(e) => setEmployee( e.target.value )}
+                            value={employee.department || ""}
+                            onChange={handleChange}
                             required>
                             <option value='' disabled>--Select Department--</option>
                             {departments.map((department, index) => (
@@ -180,8 +187,9 @@ const EmployeeForm = (onSave, onCancel) => {
                         <label className="col-4 offset-1 text-warning-emphasis" htmlFor="position">Position:</label>
                         <select
                             id="position"
+                            name="position"
                             className="col-6 form-control-sm"
-                            value={employee.position}
+                            value={employee.position || ""}
                             onChange={handleChange}
                             required
                         >
@@ -196,9 +204,10 @@ const EmployeeForm = (onSave, onCancel) => {
                         <label className="col-4 offset-1 text-warning-emphasis" htmlFor="enterdate">Company EntDate:</label>
                         <input
                             id="enterdate"
+                            name="enterdate"
                             className="col-6 form-control-sm"
                             type="date"
-                            value={employee.doe}
+                            value={employee.doe || ""}
                             onChange={handleChange}
                             required
                         />
@@ -208,9 +217,10 @@ const EmployeeForm = (onSave, onCancel) => {
                         <label className="col-4 offset-1 text-warning-emphasis" htmlFor="leavedate">Company LeaDate:</label>
                         <input
                             id="leavedate"
+                            name="leavedate"
                             className="col-6 form-control-sm"
                             type="date"
-                            value={employee.dor}
+                            value={employee.dor || ""}
                             onChange={handleChange}
                             required
                         />
