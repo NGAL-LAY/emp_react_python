@@ -23,7 +23,7 @@ const Home = () => {
     { name: 'Emma Brown', date: '2025-03-30' },
   ];
   return (
-    <div className='body_div_height body_div_width'>
+    <div className='body_div_height body_div_width bg-light bg-opacity-25'>
       {/* employee info */}
       <div className='row mt-4'>
         <div className='col-2 offset-1'>

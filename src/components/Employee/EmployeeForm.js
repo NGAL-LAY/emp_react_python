@@ -36,10 +36,10 @@ const EmployeeForm = ({ onSave }) => {
         <div className="register-container">
             <div className="register-box">
                 <form onSubmit={handleSubmit}>
-                    <h3 className="mb-3 text-warning-emphasis">Employee</h3>
+                    <h3 className="mb-3 ">Employee</h3>
                     {/* code */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="code">Emp Code:</label>
+                        <label className="col-4 offset-1 " htmlFor="code">Emp Code:</label>
                         <input className="col-6 form-control-sm"
                             id="code"
                             type="text"
@@ -52,7 +52,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* name */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="name">Name:</label>
+                        <label className="col-4 offset-1 " htmlFor="name">Name:</label>
                         <input
                             id="name"
                             className="col-6 form-control-sm"
@@ -66,7 +66,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* email */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="email">Email:</label>
+                        <label className="col-4 offset-1 " htmlFor="email">Email:</label>
                         <input
                             id="email"
                             name="email"
@@ -80,7 +80,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* gender */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="gender">Gender:</label>
+                        <label className="col-4 offset-1 " htmlFor="gender">Gender:</label>
                         <div className="col-6 d-flex align-items-center" id="gender">
                             <div className="form-check me-3">
                                 <input
@@ -92,7 +92,7 @@ const EmployeeForm = ({ onSave }) => {
                                     onChange={handleChange}
                                     id="male"
                                 />
-                                <label className="form-check-label ms-1 text-warning-emphasis" htmlFor="male">
+                                <label className="form-check-label ms-1 " htmlFor="male">
                                     Male
                                 </label>
                             </div>
@@ -106,7 +106,7 @@ const EmployeeForm = ({ onSave }) => {
                                     onChange={handleChange}
                                     id="female"
                                 />
-                                <label className="form-check-label ms-1 text-warning-emphasis" htmlFor="female">
+                                <label className="form-check-label ms-1 " htmlFor="female">
                                     Female
                                 </label>
                             </div>
@@ -114,7 +114,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* birthday */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="birthday">Birthday:</label>
+                        <label className="col-4 offset-1 " htmlFor="birthday">Birthday:</label>
                         <input
                             id="birthday"
                             name="birthday"
@@ -127,7 +127,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* address */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="address">Address:</label>
+                        <label className="col-4 offset-1 " htmlFor="address">Address:</label>
                         <input
                             id="address"
                             name="address"
@@ -140,7 +140,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* basic salaary */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="basicsalary">Basic Salary:</label>
+                        <label className="col-4 offset-1 " htmlFor="basicsalary">Basic Salary:</label>
                         <input
                             id="basicsalary"
                             name="basicsalary"
@@ -154,7 +154,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* phone */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="phone">Phone:</label>
+                        <label className="col-4 offset-1 " htmlFor="phone">Phone:</label>
                         <input
                             id="phone"
                             name="phone"
@@ -168,7 +168,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* department */}
                     <div className="input-group row mb-2">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="department">Department:</label>
+                        <label className="col-4 offset-1 " htmlFor="department">Department:</label>
                         <select id="department"
                             name="department"
                             className="col-6 form-control-sm"
@@ -184,7 +184,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* position */}
                     <div className="input-group row mb-2">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="position">Position:</label>
+                        <label className="col-4 offset-1 " htmlFor="position">Position:</label>
                         <select
                             id="position"
                             name="position"
@@ -201,7 +201,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* enterdate */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="enterdate">Company EntDate:</label>
+                        <label className="col-4 offset-1 " htmlFor="enterdate">Company EntDate:</label>
                         <input
                             id="enterdate"
                             name="enterdate"
@@ -214,7 +214,7 @@ const EmployeeForm = ({ onSave }) => {
                     </div>
                     {/* company leave date */}
                     <div className="input-group row mb-1">
-                        <label className="col-4 offset-1 text-warning-emphasis" htmlFor="leavedate">Company LeaDate:</label>
+                        <label className="col-4 offset-1 " htmlFor="leavedate">Company LeaDate:</label>
                         <input
                             id="leavedate"
                             name="leavedate"
@@ -230,7 +230,7 @@ const EmployeeForm = ({ onSave }) => {
                         <button type="submit" className="register-btn-one btn btn-sm btn-outline-primary">
                             Save
                         </button>
-                        <Link to="/employees" className="register-btn-two btn btn-sm btn-outline-light">
+                        <Link to="/employees" className="register-btn-two btn btn-sm btn-outline-dark">
                             Cancel
                         </Link>
                     </div>
